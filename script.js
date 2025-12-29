@@ -57,63 +57,63 @@ const configCategorias = {
         externalText: 'Curso Completo en BUK',
         actionButton: {
             text: 'Evaluación Moodle',
-            url: 'https://forms.google.com'
+            url: 'https://moodle.rbsas.co/login/'
         }
     },
     'tecnologia': { // Seguridad Informática
-        externalUrl: 'https://www.iso.org/isoiec-27001-information-security.html',
-        externalText: 'Políticas ISO 27001',
+        externalUrl: 'https://recaudobogota.buk.co/capacitaciones/lms_course/1029084/lms_chapter/10305219/preview#lmsTopicAttendee=12473085',
+        externalText: 'Curso Completo en Buk',
         actionButton: {
-            text: 'Mesa de Ayuda',
-            url: 'https://jira.atlassian.com'
+            text: 'Evaluación Moodle',
+            url: 'https://moodle.rbsas.co/login/'
         }
     },
     'seguridad': { // Seguridad Física
-        externalUrl: 'https://www.securitymagazine.com',
-        externalText: 'Protocolos de Acceso',
+        externalUrl: 'https://recaudobogota.buk.co/capacitaciones/lms_course/1110981/lms_chapter/10329478/preview#lmsTopicAttendee=12503867',
+        externalText: 'Curso Completo en Buk',
         actionButton: {
-            text: 'Solicitar Carnet',
-            url: 'https://forms.google.com'
+            text: 'Evaluación Moodle',
+            url: 'https://moodle.rbsas.co/login/'
         }
     },
     'compras': {
-        externalUrl: 'https://www.sap.com',
-        externalText: 'Portal de Proveedores',
+        externalUrl: 'https://recaudobogota.buk.co/capacitaciones/lms_course/1111190/lms_chapter/10352326/preview#lmsTopicAttendee=12547223',
+        externalText: 'Curso Completo en Buk',
         actionButton: {
-            text: 'Solicitud de Compra',
-            url: 'https://forms.google.com'
+            text: 'Evaluación Moodle',
+            url: 'https://moodle.rbsas.co/login/'
         }
     },
     'contratos': {
-        externalUrl: 'https://www.docusign.com',
-        externalText: 'Gestor Documental',
+        externalUrl: 'https://recaudobogota.buk.co/capacitaciones/lms_course/1009976/lms_chapter/10328744/preview#lmsTopicAttendee=12502318',
+        externalText: 'Curso Completo en Buk',
         actionButton: {
-            text: 'Revisar Minutas',
-            url: 'https://drive.google.com'
+            text: 'Evaluación Moodle',
+            url: 'https://moodle.rbsas.co/login/'
         }
     },
     'gobierno': {
-        externalUrl: 'https://www.oecd.org',
-        externalText: 'Código de Ética',
+        externalUrl: 'https://recaudobogota.buk.co/capacitaciones/lms_course/1110971/lms_chapter/10329454/preview#lmsTopicAttendee=12503770',
+        externalText: 'Curso Completo en Buk',
         actionButton: {
-            text: 'Línea Ética',
-            url: 'https://forms.google.com'
+            text: 'Evaluación Moodle',
+            url: 'https://moodle.rbsas.co/login/'
         }
     },
     'bienestar': {
-        externalUrl: 'https://www.greatplacetowork.com',
-        externalText: 'Beneficios',
+        externalUrl: 'https://recaudobogota.buk.co/benefits',
+        externalText: 'Curso Completo en Buk',
         actionButton: {
-            text: 'Inscribirse a Actividad',
-            url: 'https://forms.google.com'
+            text: 'Evaluación Moodle',
+            url: 'https://moodle.rbsas.co/login/'
         }
     },
     'bienvenida': {
-        externalUrl: 'https://www.linkedin.com',
-        externalText: 'Red Social',
+        externalUrl: 'https://recaudobogota.buk.co/benefits',
+        externalText: 'Curso Completo en Buk',
         actionButton: {
-            text: 'Kit de Bienvenida',
-            url: 'https://www.spotify.com'
+            text: 'Evaluación Moodle',
+            url: 'https://moodle.rbsas.co/login/'
         }
     }
 };
