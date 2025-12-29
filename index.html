@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- PÁGINA PRINCIPAL: Galería de Videos - Inducción Corporativa RB -->
+<html lang="es">
+
+<head>
+    <!-- CONFIGURACIÓN DE CARACTERES Y RESPONSIVE -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TÍTULO DE LA PÁGINA - PUEDES PERSONALIZARLO -->
+    <title>Galería de Videos - Inducción Corporativa RB</title>
+
+    <!-- ICONOS DE FONT AWESOME - PARA LOS BOTONES Y ELEMENTOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- ESTILOS PERSONALIZADOS - AQUÍ PUEDES MODIFICAR COLORES Y DISEÑO -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER SUPERIOR CON LOGO IZQUIERDO Y BÚSQUEDA DERECHA -->
+    <header class="header-superior">
+        <div class="header-contenedor">
+            <!-- LOGO EN LA ESQUINA SUPERIOR IZQUIERDA -->
+            <div class="logo-header">
+                <img src="assets/logo.png" alt="Logo Empresa" class="logo">
+                <span class="logo-texto">Inducción Corportativa RB</span>
+            </div>
+
+            <!-- BÚSQUEDA EN LA ESQUINA SUPERIOR DERECHA -->
+            <div class="busqueda-header">
+                <div class="busqueda-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="busquedaInput" placeholder="Buscar videos..." class="input-busqueda">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL CON LAYOUT LATERAL -->
+    <div class="contenedor-principal">
+        <!-- COLUMNA IZQUIERDA: CARRUSEL DE CATEGORÍAS -->
+        <aside class="columna-categorias">
+            <h3 class="titulo-categorias">Categorías</h3>
+
+            <!-- CARRUSEL VERTICAL DE CATEGORÍAS -->
+            <div class="carrusel-vertical" id="carruselTrack">
+                <div class="categoria-item-vertical active" data-categoria="todos">
+                    <i class="fas fa-th"></i>
+                    <span>Todos</span>
+                </div>
+                <div class="categoria-item-vertical" data-categoria="hse">
+                    <i class="fas fa-hard-hat"></i>
+                    <span>HSE</span>
+                </div>
+                <div class="categoria-item-vertical" data-categoria="tecnologia">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Seguridad Informática</span>
+                </div>
+                <div class="categoria-item-vertical" data-categoria="seguridad">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Seguridad Física</span>
+                </div>
+                <div class="categoria-item-vertical" data-categoria="compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Compras</span>
+                </div>
+                <div class="categoria-item-vertical" data-categoria="contratos">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Contratos</span>
+                </div>
+                <div class="categoria-item-vertical" data-categoria="gobierno">
+                    <i class="fas fa-landmark"></i>
+                    <span>Gobierno Corporativo</span>
+                </div>
+                <div class="categoria-item-vertical" data-categoria="bienestar">
+                    <i class="fas fa-heart"></i>
+                    <span>Bienestar</span>
+                </div>
+                <div class="categoria-item-vertical" data-categoria="bienvenida">
+                    <i class="fas fa-handshake"></i>
+                    <span>Bienvenida</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- COLUMNA CENTRAL: VIDEOS EN CARRUSEL 360° -->
+        <main class="columna-videos">
+            <div class="video-carrusel-container">
+                <div class="video-carrusel-track" id="videoTrack">
+                    <!-- Los videos se cargarán aquí dinámicamente -->
+                </div>
+
+                <!-- BOTÓN PARA PLATAFORMA EXTERNA (REUBICADO) -->
+                <div class="boton-externo-container">
+                    <!-- BOTÓN PRINCIPAL: PLATAFORMA EXTERNA -->
+                    <button class="boton-externo-lateral" id="btnPlataformaExterna" onclick="abrirPlataformaExterna()">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span id="textoPlataformaExterna">Plataforma Externa</span>
+                    </button>
+
+                    <!-- BOTÓN SECUNDARIO: ACCIÓN CONDICIONAL (INICIALMENTE DESHABILITADO) -->
+                    <button class="boton-accion-condicional" id="btnAccion" onclick="ejecutarAccion()" disabled>
+                        <i class="fas fa-star"></i>
+                        <span id="textoAccion">Ver más información</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- INDICADORES DE POSICIÓN DEL CARRUSEL -->
+            <div class="indicadores-carrusel" id="indicadores">
+                <!-- Se generarán automáticamente -->
+            </div>
+        </main>
+
+        <!-- COLUMNA DERECHA: CONTROLES Y BOTÓN EXTERNO -->
+        <aside class="columna-controles">
+
+
+            <!-- CONTROLES DEL CARRUSEL -->
+            <div class="controles-carrusel">
+                <button class="btn-control" onclick="anteriorVideo()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="info-video-actual">
+                    <span id="videoActualNumero">1</span>
+                    <span>/</span>
+                    <span id="totalVideos">3</span>
+                </div>
+
+                <button class="btn-control" onclick="siguienteVideo()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- PLAY/PAUSA DEL CARRUSEL AUTOMÁTICO -->
+            <div class="control-automatico">
+                <button class="btn-play-pause" id="btnPlayPause" onclick="togglePlayPause()">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <span class="texto-automatico">Automático</span>
+            </div>
+        </aside>
+    </div>
+
+    <!-- MODAL PARA REPRODUCIR VIDEOS -->
+    <div class="modal-video" id="modalVideo">
+        <div class="modal-contenido">
+            <button class="modal-cerrar" onclick="cerrarVideo()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-container">
+                <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media; fullscreen"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3 id="videoTitulo"></h3>
+                <p id="videoDescripcion"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE BIENVENIDA Y PERFILAMIENTO -->
+    <div class="modal-welcome" id="welcomeModal">
+        <div class="modal-welcome-content">
+            <!-- PASO 1: VIDEO DE BIENVENIDA -->
+            <div class="welcome-step active" id="stepVideo">
+                <h2 class="welcome-title">¡Bienvenido a Recaudo Bogotá!</h2>
+                <div class="welcome-video-container">
+                    <!-- Video de ejemplo (reemplazar con el real) -->
+                    <iframe id="welcomeVideoFrame"
+                        src="https://drive.google.com/file/d/1dFfBkMjmj4kT9VCFzPoDiB4hr_CtR-3I/preview" frameborder="0"
+                        allow="autoplay" allowfullscreen></iframe>
+                </div>
+                <p class="welcome-footer-text">Por favor ve el video completo para continuar.</p>
+                <button class="btn-welcome-next" id="btnWelcomeNext" disabled>
+                    Siguiente <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- PASO 2: TIPO DE CARGO -->
+            <div class="welcome-step" id="stepRole">
+                <h2 class="welcome-title">Selecciona tu tipo de cargo</h2>
+                <div class="profile-options">
+                    <div class="profile-card" onclick="selectRole('administrativo')">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Administrativo</h3>
+                    </div>
+                    <div class="profile-card" onclick="selectRole('operativo')">
+                        <i class="fas fa-hard-hat"></i>
+                        <h3>Operativo</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PASO 3A: ROL ADMINISTRATIVO -->
+            <div class="welcome-step" id="stepAdminSub">
+                <h2 class="welcome-title">Selecciona tu rol</h2>
+                <div class="profile-options">
+                    <div class="profile-card" onclick="selectSubRole('admin_jefe')">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Líder (Personas a cargo)</h3>
+                    </div>
+                    <div class="profile-card" onclick="selectSubRole('admin_otro')">
+                        <i class="fas fa-user"></i>
+                        <h3>Otro</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PASO 3B: ROL OPERATIVO -->
+            <div class="welcome-step" id="stepOpSub">
+                <h2 class="welcome-title">Selecciona tu rol</h2>
+                <div class="profile-options">
+                    <div class="profile-card" onclick="selectSubRole('op_tecnico')">
+                        <i class="fas fa-tools"></i>
+                        <h3>Técnico de Campo</h3>
+                    </div>
+                    <div class="profile-card" onclick="selectSubRole('op_otro')">
+                        <i class="fas fa-user-cog"></i>
+                        <h3>Otro</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INDICADOR DE CARGA -->
+    <div class="loading" id="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Cargando videos...</p>
+    </div>
+
+    <!-- JAVASCRIPT CON LÓGICA DEL CARRUSEL 360° -->
+    <script src="script.js"></script>
+</body>
+
+</html>
