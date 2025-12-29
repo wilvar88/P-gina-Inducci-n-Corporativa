@@ -45,10 +45,10 @@ let videosVistos = new Set();
 */
 const configCategorias = {
     'todos': {
-        externalUrl: 'https://www.google.com',
-        externalText: 'Portal General',
+        externalUrl: 'https://recaudobogota.buk.co/static_pages/portal',
+        externalText: 'Portal Buk',
         actionButton: {
-            text: 'Ver Resumen General',
+            text: 'Plataforma Buk',
             url: 'https://recaudobogota.buk.co/users/sign_in'
         }
     },
