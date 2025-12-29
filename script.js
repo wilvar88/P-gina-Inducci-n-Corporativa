@@ -53,10 +53,10 @@ const configCategorias = {
         }
     },
     'hse': {
-        externalUrl: 'https://www.osha.gov',
-        externalText: 'Normatividad HSE',
+        externalUrl: 'https://recaudobogota.buk.co/capacitaciones/lms_course/1117791/lms_chapter/12078903/preview#lmsTopicAttendee=15199099',
+        externalText: 'Curso Completo en BUK',
         actionButton: {
-            text: 'Reportar Incidente',
+            text: 'Evaluación Moodle',
             url: 'https://forms.google.com'
         }
     },
